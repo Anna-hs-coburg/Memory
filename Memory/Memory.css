@@ -14,6 +14,18 @@ body {
   margin: 10%;
 }
 
+.newDiv2 {
+  background-color:aqua;
+  width: 150px;
+  height: 150px;
+  justify-items: center;
+  border-radius: 9%;
+  /* z-index: 10; */
+  font-size: 2rem;
+  /* text-align:center; */
+  display: inline;
+}
+
 .card {
   width: 150px;
   height: 150px;
@@ -27,4 +39,5 @@ body {
   width: 150px;
   height: 150px;
   border-radius: 9%;
+  visibility: hidden;
 }
