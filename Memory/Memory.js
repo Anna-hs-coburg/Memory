@@ -4,8 +4,9 @@ var element1 = null;
 var element2 = null;
 
 var cards = ["bunny.jpg", "cow.jpg", "hedgehog.jpg", "lion.jpg", "monkey.jpg", "rhino.jpg", "sheep.jpg", "zebra.jpg", "bunny.jpg", "cow.jpg", "hedgehog.jpg", "lion.jpg", "monkey.jpg", "rhino.jpg", "sheep.jpg", "zebra.jpg"];
-// cards.random()
 let container = document.getElementById("Memory");
+
+
 for (let index = 0; index < cards.length; index++) {
     const element = cards[index];
     var newDiv = document.createElement('div');
@@ -41,6 +42,24 @@ for (let index = 0; index < cards.length; index++) {
             element2= Img;
         }
     })
+}
+function compare() {
+    const score1 = document.getElementById("score1");
+    const score2 = document.getElementById("score2");
+
+    const zufall1 = document.getElementById("zufallszahl")
+    const zufall2 = document.getElementById("zufallszahl2")
+    const z1 = parseInt(zufall1.innerText)
+    const z2 = parseInt(zufall2.innerText)
+
+    if (z1 > z2) {
+        score1.innerText = parseInt(score1.innerText) + 1;
+    } else if (z1<z2) {
+        score2.innerText = parseInt(score2.innerText) + 1;
+    } else {
+        score1.innerText = parseInt(score1.innerText) + 1;
+        score2.innerText = parseInt(score2.innerText) + 1;
+    }
 }
 
 
