@@ -1,4 +1,7 @@
 console.log("foo");
+var match1 = "";
+var element1 = null;
+var element2 = null;
 
 var cards = ["bunny.jpg", "cow.jpg", "hedgehog.jpg", "lion.jpg", "monkey.jpg", "rhino.jpg", "sheep.jpg", "zebra.jpg", "bunny.jpg", "cow.jpg", "hedgehog.jpg", "lion.jpg", "monkey.jpg", "rhino.jpg", "sheep.jpg", "zebra.jpg"];
 // cards.random()
@@ -18,7 +21,25 @@ for (let index = 0; index < cards.length; index++) {
     console.log(newDiv);
     newDiv.addEventListener("click", function (event) {
         console.log(event);
-        event.target.getElementsByTagName('img')[0].style.visibility = 'visible';
+       var Img = event.target.getElementsByTagName('img')[0];
+       Img.style.visibility = 'visible';
+       if (element1 != null && element2 != null) {
+        element1.style.visibility = 'hidden';
+        element2.style.visibility = 'hidden';
+        element1 = null;
+        element2 = null;
+       }
+        if (match1 == "") {
+            match1 = Img.getAttribute('src');
+            element1= Img;
+        } else if (match1 == Img.getAttribute('src')) {
+            console.log ("gleich");
+            match1 ="";
+        } else {
+            console.log("ungleich");
+            match1 = "";
+            element2= Img;
+        }
     })
 }
 
