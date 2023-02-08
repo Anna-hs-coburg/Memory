@@ -3,25 +3,12 @@ console.log("foo");
 let match1 = "";
 let element1 = null;
 let element2 = null;
+let highscore = document.getElementById("score1")
 
 const cards = ["bunny.jpg", "cow.jpg", "hedgehog.jpg", "lion.jpg", "monkey.jpg", "rhino.jpg", "sheep.jpg", "zebra.jpg", "bunny.jpg", "cow.jpg", "hedgehog.jpg", "lion.jpg", "monkey.jpg", "rhino.jpg", "sheep.jpg", "zebra.jpg"];
 
-function Highscore() {
 
-        const element1 = document.getElementById("score1");
-        const element2 = document.getElementById("score1");
-    
-        const z1 = parseInt(element1.innerText);
-        const z2 = parseInt(element2.innerText);
-    
-        console.log(z1);
-    
-        if (z1 == z2) {
-            element1.innerText = parseInt(element1.innerText) + 100;
-        } else if (z1 != z2) {
-            element1.innerText = parseInt(element1.innerText) - 100;
-        }
-    }
+
 
 let container = document.getElementById("Memory");
 
@@ -61,14 +48,55 @@ for (let index = 0; index < cards.length; index++) {
         } else if (match1 == Img.getAttribute('src')) {
             console.log("gleich");
             match1 = "";
+            highscore.innerText = parseInt(highscore.innerText) +200;
 
         } else {
             console.log("ungleich");
             match1 = "";
             element2 = Img;
+            highscore.innerText = parseInt(highscore.innerText) -100;
         }
     })
 }
+
+
+// const cards = [];
+
+// let bild = Math.ceil(Math.random() * 6);
+// let memory = document.getElementById("Memory");
+// memory.innerText = InitCards;
+// let counter = 0;
+// let IntervallID;
+
+// function ShuffelCards() {
+//     IMG();
+//     // setTimeout(compare, 3000);
+// }
+
+// function IMG() {
+//     IntervallID = setInterval(generatRandomNumber, 200);
+// }
+
+// function generatRandomPicture() {
+//     let zufall = Math.ceil(Math.random() * 8);
+
+//     console.log(cards)
+//     document.getElementById("Memory");
+//     memory.innerText = zufall;
+//     counter++;
+//     if (counter > 7) {
+//         clearInterval(IntervallID);
+//         counter = 0;
+//     }
+// }
+
+
+
+// function shuffle() {
+//     cards.forEach(card => {
+//       let ramdomPos = Math.floor(Math.random() * 12);
+//       cards.setAttribute('src', './MemoryBilder /' + element);
+//     })};
 
 
 
