@@ -1,19 +1,32 @@
 body {
-    background-color: bisque;
-    color: black;
-  }
-  /* .ueberschrift{
-  } */
-  .container {
-    display: grid;
-    grid-template-columns: 150px 150px 150px 150px;
-    grid-template-rows: 150px 150px 150px 150px;
-    gap: 15px;
-    justify-items: center;
-    border-radius: 100%;
-    margin: 10%;
-  }
-  /* .newDiv2 {
+  background-color: bisque;
+  color: black;
+}
+
+.writing {
+  justify-items: right;
+  font-size: 4rem;
+  /* border-radius: 100%; */
+  margin: 5%;
+  text-align: right;
+  width: 150px;
+  height: 150px;
+  color: rgb(253, 106, 1);
+}
+
+
+
+.container {
+  display: grid;
+  grid-template-columns: 150px 150px 150px 150px;
+  grid-template-rows: 150px 150px 150px 150px;
+  gap: 15px;
+  justify-items: center;
+  border-radius: 100%;
+  margin: 10%;
+}
+
+/* .newDiv2 {
     background-color:aqua;
     width: 150px;
     height: 150px;
@@ -22,38 +35,37 @@ body {
     font-size: 2rem;
     display: inline;
   } */
-  .card {
-    width: 150px;
-    height: 150px;
-    border: 3px solid black;
-    font-size: 2rem;
-    background-color: rgb(197, 125, 37);
-    border-radius: 10%;
-  }
-  .picture {
-    width: 150px;
-    height: 150px;
-    border-radius: 9%;
-    visibility: hidden;
-  }
-  button {
-    width: 200px;
-    height: 100px;
-    border: 3px solid rgb(233, 153, 25);
-    background-color: rgb(243, 209, 85);
-    display: block;
-    font-size: 2rem;
-    margin: 10%;
-    border-radius: 50%;  
-  }
-  .score{
-    justify-items: center;
-    font-size: 4rem;
-    border-radius: 100%;
-    margin: 10%;
-    text-align:center;
-    width: 150px;
-    height: 150px;
-  }
-  
-  
+.card {
+  width: 150px;
+  height: 150px;
+  border: 3px solid black;
+  font-size: 2rem;
+  background-color: rgb(197, 125, 37);
+  border-radius: 10%;
+}
+
+.picture {
+  width: 150px;
+  height: 150px;
+  border-radius: 9%;
+  visibility: hidden;
+}
+
+button {
+  width: 200px;
+  height: 100px;
+  border: 3px solid rgb(233, 153, 25);
+  background-color: rgb(243, 209, 85);
+  display: block;
+  font-size: 2rem;
+  margin: 10%;
+  border-radius: 50%;
+
+}
+
+.score {
+  font-size: 4rem;
+  text-align: right;
+  color: gray;
+  justify-items: center;
+}
