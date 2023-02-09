@@ -3,41 +3,35 @@ console.log("foo");
 let match = "";
 let element1 = null;
 let element2 = null;
-let highscore = document.getElementById("score1")
+let highscore = document.getElementById("score1");
 
-const InitCards = ["bunny.jpg", "cow.jpg", "hedgehog.jpg", "lion.jpg", "monkey.jpg", "rhino.jpg", "sheep.jpg", "zebra.jpg", "bunny.jpg", "cow.jpg", "hedgehog.jpg", "lion.jpg", "monkey.jpg", "rhino.jpg", "sheep.jpg", "zebra.jpg"];
+const cards = ["bunny.jpg", "cow.jpg", "hedgehog.jpg", "lion.jpg", "monkey.jpg", "rhino.jpg", "sheep.jpg", "zebra.jpg", "bunny.jpg", "cow.jpg", "hedgehog.jpg", "lion.jpg", "monkey.jpg", "rhino.jpg", "sheep.jpg", "zebra.jpg"];
 
 
- const cards = [];
+//  const cards = [];
 
-// let bild = Math.ceil(Math.random() * 6);
-let memory = document.getElementById("Memory");
-// memory.innerText = InitCards;
-// let counter = 0;
-// let IntervallID;
+// // let bild = Math.ceil(Math.random() * 6);
+// let memory = document.getElementById("Memory");
+// // memory.innerText = InitCards;
+// // let counter = 0;
+// // let IntervallID;
 
-function shuffle() {
-    // IMG();
-    generatRandomPicture();
-    // setTimeout(compare, 3000);
-}
-
-// function IMG() {
-//     IntervallID = setInterval(generatRandomNumber, 200);
+// function shuffle() {
+//     generatRandomPicture();
+//     // setTimeout(compare, 3000);
 // }
 
-function generatRandomPicture() {
-    let zufall = Math.ceil(Math.random() * 16);
-
-    console.log(InitCards);
-    document.getElementById("Memory");
-    memory.innerText = zufall;
-    // counter++;
-    // if (counter > 7) {
-    //     // clearInterval(IntervallID);
-    //     counter = 0;
-    // }
-}
+// function generatRandomPicture() {
+//     let zufall = Math.ceil(Math.random() * 16);
+//     console.log(InitCards);
+//     document.getElementById("Memory");
+//     memory.innerText = zufall;
+//     // counter++;
+//     // if (counter > 7) {
+//     //     // clearInterval(IntervallID);
+//     //     counter = 0;
+//     // }
+// }
 
 
 
@@ -86,6 +80,17 @@ for (let index = 0; index < cards.length; index++) {
             match = "";
             element2 = Img;
             highscore.innerText = parseInt(highscore.innerText) - 100;
+
+            let pastTime = 0;
+            let timer = setInterval(sec, 3000);
+
+            function sec() {
+                console.log(timer);
+                pastTime++;
+                if (pastTime > 3) {
+                    clearInterval(timer);
+                }
+            }
         }
     })
 }

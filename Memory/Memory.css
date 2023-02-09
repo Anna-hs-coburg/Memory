@@ -1,10 +1,11 @@
 body {
   background-color: bisque;
   color: black;
+  /* justify-items: center; */
 }
 
 .writing {
-  justify-items: right;
+  /* justify-items: right; */
   font-size: 4rem;
   /* border-radius: 100%; */
   margin: 5%;
@@ -12,9 +13,17 @@ body {
   width: 150px;
   height: 150px;
   color: rgb(253, 106, 1);
+  position: relative;
+  top:50%;
 }
 
-
+.foo{
+  font-size: 3rem;
+  color: gray;
+  position: fixed;
+  right: 15%;
+  top:2cm;
+}
 
 .container {
   display: grid;
@@ -35,6 +44,7 @@ body {
     font-size: 2rem;
     display: inline;
   } */
+  
 .card {
   width: 150px;
   height: 150px;
@@ -58,14 +68,20 @@ button {
   background-color: rgb(243, 209, 85);
   display: block;
   font-size: 2rem;
-  margin: 10%;
-  border-radius: 50%;
-
+  /* margin: 20%; */
+  border-radius: 10%;
+  position: fixed;
+  right: 10%;
+  bottom: 5cm;
 }
 
 .score {
   font-size: 4rem;
-  text-align: right;
+  /* text-align: right; */
   color: gray;
-  justify-items: center;
+  /* justify-items: center; */
+  position: fixed;
+  right: 5%;
+  top:3cm;
 }
+
