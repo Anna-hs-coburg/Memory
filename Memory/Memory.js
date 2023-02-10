@@ -29,7 +29,7 @@ function initalize() {
             var Img = event.target.getElementsByTagName('img')[0];
             Img.style.visibility = 'visible';
 
-            if (move1 != null && element2 != null) {
+            if (move1 != null && move2 != null) {
                 move1.style.visibility = 'hidden';
                 move2.style.visibility = 'hidden';
                 move1 = null;
@@ -52,13 +52,28 @@ function initalize() {
                 move2 = Img;
                 highscore -= 100;
                 document.getElementById("score1").innerText = highscore;
-
             }
         })
     }
-
 }
 
+function resetGame() {
+    var imgTags = document.getElementsByTagName('img');
+
+    match = "";
+    move1 = null;
+    move2 = null;
+    highscore = 0;
+    document.getElementById("score1").innerText = highscore;
+
+    cards = cards.sort((a, b) => 0.5 - Math.random());
+
+    for (let index = 0; index < imgTags.length; index++) {
+        var currentImg = imgTags[index];
+        currentImg.style.visibility = 'hidden';
+        currentImg.setAttribute('src', './MemoryBilder /' + cards[index]);
+    }
+}
 
 
 
