@@ -6,17 +6,21 @@ let match = "";
 let move1 = null;
 let move2 = null;
 let highscore = 0;
+const winText = document.getElementById("win");
 
 function initalize() {
     let container = document.getElementById("Memory");
 
+    //the shuffle cards function 
     cards = cards.sort((a, b) => 0.5 - Math.random());
 
     for (let index = 0; index < cards.length; index++) {
+
         const element = cards[index];
         const newDiv = document.createElement('div');
         newDiv.setAttribute('class', 'card');
 
+        // to connect the divs with the imgs
         const newImg = document.createElement('img');
         newImg.setAttribute('src', './MemoryBilder /' + element);
         newImg.setAttribute('class', 'picture');
@@ -43,19 +47,29 @@ function initalize() {
             } else if (match == Img.getAttribute('src')) {
                 console.log("gleich");
                 match = "";
-                highscore += 200;
+                highscore += 500;
                 document.getElementById("score1").innerText = highscore;
+                winText.innerText = "Herzlichen Glückwunsch:) dein Highscore ist:";
 
             } else {
                 console.log("ungleich");
                 match = "";
                 move2 = Img;
-                highscore -= 100;
+                highscore -= 250;
                 document.getElementById("score1").innerText = highscore;
+                if (move1 != move2) {
+                    setInterval(3000)
+                    console.log(setInterval); 
+                    move1.style.visibility = 'hidden';
+                    move2.style.visibility = 'hidden';
+                }
             }
         })
     }
 }
+
+
+// the function is there for that the game resets and the cards become newly shuffled
 
 function resetGame() {
     var imgTags = document.getElementsByTagName('img');
@@ -72,6 +86,7 @@ function resetGame() {
         var currentImg = imgTags[index];
         currentImg.style.visibility = 'hidden';
         currentImg.setAttribute('src', './MemoryBilder /' + cards[index]);
+        winText.innerText = "";
     }
 }
 

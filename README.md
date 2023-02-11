@@ -1,7 +1,10 @@
 # Memory
 Prüfung 
 
-bildquellen:
+Klausur zum Thema Programmierung: Erstelle ein voll funktionsfähiges Memory.
+
+
+Bildquellen:
 
 https://pixabay.com/de/photos/affe-comicfigur-zeichnung-lustig-6097/
 https://pixabay.com/de/photos/frosch-comicfigur-zeichnung-lustig-5653/
