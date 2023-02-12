@@ -6,13 +6,16 @@ let match = "";
 let move1 = null;
 let move2 = null;
 let highscore = 0;
+let timer = null;
+let matchCounter = 0;
+let cardsCounter = cards.length / 2;
 const winText = document.getElementById("win");
 
 function initalize() {
     let container = document.getElementById("Memory");
 
     //the shuffle cards function 
-    cards = cards.sort((a, b) => 0.5 - Math.random());
+    cards = cards.sort(() => 0.5 - Math.random());
 
     for (let index = 0; index < cards.length; index++) {
 
@@ -34,10 +37,8 @@ function initalize() {
             Img.style.visibility = 'visible';
 
             if (move1 != null && move2 != null) {
-                move1.style.visibility = 'hidden';
-                move2.style.visibility = 'hidden';
-                move1 = null;
-                move2 = null;
+                clearTimeout(timer);
+                hideCards();
             }
 
             if (match == "") {
@@ -49,38 +50,39 @@ function initalize() {
                 match = "";
                 highscore += 500;
                 document.getElementById("score1").innerText = highscore;
-                winText.innerText = "Herzlichen Glückwunsch:) dein Highscore ist:";
+                matchCounter +=1;
+                if (cardsCounter == matchCounter) {
+                    winText.innerText = "Herzlichen Glückwunsch:) dein Highscore ist:" + highscore;
+                }
 
             } else {
                 console.log("ungleich");
                 match = "";
                 move2 = Img;
                 highscore -= 250;
+                if (highscore < 0) {
+                    highscore = 0;
+                };
                 document.getElementById("score1").innerText = highscore;
-                // if (move1 != move2) {
-                //     setInterval(3000)
-                //     console.log(setInterval);
-                //     move1.style.visibility = 'hidden';
-                //     move2.style.visibility = 'visibile';
-                //     move2.style.visibility = 'hidden';
-                // }
-                
-            } switch (highscore) {
-                case -250:
-                case 0:
-                    highscore = "";
-                    console.log(0);
-                    break;
-                case 0:
-                case 500:
-                    document.getElementById("score1").innerText = highscore;
-                default:
-                    break;
+                timer = setTimeout(autoHide, 3000)
+
             }
         })
     }
 }
 
+function autoHide() {
+    if (move1 != null && move2 != null) {
+        hideCards();
+    }
+}
+
+function hideCards(params) {
+    move1.style.visibility = 'hidden';
+    move2.style.visibility = 'hidden';
+    move1 = null;
+    move2 = null;
+}
 
 // the function is there for that the game resets and the cards become newly shuffled
 
@@ -91,9 +93,10 @@ function resetGame() {
     move1 = null;
     move2 = null;
     highscore = 0;
+    matchCounter = 0;
     document.getElementById("score1").innerText = highscore;
 
-    cards = cards.sort((a, b) => 0.5 - Math.random());
+    cards = cards.sort(() => 0.5 - Math.random());
 
     for (let index = 0; index < imgTags.length; index++) {
         var currentImg = imgTags[index];
