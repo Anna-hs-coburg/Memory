@@ -46,8 +46,8 @@ body {
   font-size: 2rem;
   width: 600px;
   height: 600px;
-  right: 10%;
-  position: fixed;
+  right: 15%;
+  position: absolute;
   top: 1cm;
 }
 
@@ -59,23 +59,23 @@ button {
   display: block;
   font-size: 2rem;
   border-radius: 5%;
-  position: fixed;
+  position: absolute;
   left: 10%;
-  bottom: 8cm;
+  bottom: 5cm;
 }
 
 .foo {
   font-size: 3rem;
   color: gray;
-  position: fixed;
+  position: absolute;
   left: 2%;
-  top: 4cm;
+  top: 5cm;
 }
 
 .score {
   font-size: 4rem;
   color: gray;
-  position: fixed;
+  position: absolute;
   left: 25%;
-  top: 5cm;
+  top: 6cm;
 }
