@@ -52,7 +52,7 @@ function initalize() {
                 document.getElementById("score1").innerText = highscore;
                 matchCounter +=1;
                 if (cardsCounter == matchCounter) {
-                    winText.innerText = "Herzlichen Glückwunsch:) dein Highscore ist:" + highscore;
+                    winText.innerText = "Herzlichen Glückwunsch:) dein Highscore ist:  " + highscore;
                 }
 
             } else {
@@ -70,7 +70,7 @@ function initalize() {
         })
     }
 }
-
+// this functions hides the Cards
 function autoHide() {
     if (move1 != null && move2 != null) {
         hideCards();
@@ -84,7 +84,7 @@ function hideCards(params) {
     move2 = null;
 }
 
-// the function is there for that the game resets and the cards become newly shuffled
+// this function resets the Game and shuffle the cards 
 
 function resetGame() {
     var imgTags = document.getElementsByTagName('img');
