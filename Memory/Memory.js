@@ -57,12 +57,25 @@ function initalize() {
                 move2 = Img;
                 highscore -= 250;
                 document.getElementById("score1").innerText = highscore;
-                if (move1 != move2) {
-                    setInterval(3000)
-                    console.log(setInterval); 
-                    move1.style.visibility = 'hidden';
-                    move2.style.visibility = 'hidden';
-                }
+                // if (move1 != move2) {
+                //     setInterval(3000)
+                //     console.log(setInterval);
+                //     move1.style.visibility = 'hidden';
+                //     move2.style.visibility = 'visibile';
+                //     move2.style.visibility = 'hidden';
+                // }
+                
+            } switch (highscore) {
+                case -250:
+                case 0:
+                    highscore = "";
+                    console.log(0);
+                    break;
+                case 0:
+                case 500:
+                    document.getElementById("score1").innerText = highscore;
+                default:
+                    break;
             }
         })
     }
