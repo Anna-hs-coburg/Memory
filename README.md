@@ -1,6 +1,7 @@
 # Memory
 Prüfung 
 
+
 Klausur zum Thema Programmierung: Erstelle ein voll funktionsfähiges Memory.
 
 
@@ -16,3 +17,4 @@ https://pixabay.com/de/photos/schaf-comicfigur-zeichnung-lustig-6101/
 https://pixabay.com/de/photos/nashorn-comicfigur-zeichnung-lustig-6098/
 https://pixabay.com/de/photos/hase-comic-figur-bild-malen-49748/
 https://pixabay.com/de/photos/löwe-comic-figur-bild-malen-49756/
+ADT Logo selbst entworfen mit Canva -> https://www.canva.com/de_de/
